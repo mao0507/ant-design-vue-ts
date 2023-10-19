@@ -12,6 +12,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 export default defineConfig({
   plugins: [
     vue(),
+    Icons({}),
     Components({
       resolvers: [
         IconsResolver({
@@ -20,7 +21,6 @@ export default defineConfig({
         }),
       ],
     }),
-    Icons({}),
   ],
   resolve: {
     alias: {
