@@ -4,27 +4,24 @@
     <SideBarView/>
     <a-layout>
       <!-- Header -->
-      <header-view/>
+      <HeaderView/>
       <!-- Content -->
-      <a-layout-content
-        :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }"
-      >
-        Content
-      </a-layout-content>
+      <RouterView></RouterView>
       <!-- Footer -->
-      <footerView/>
+      <FooterView/>
     </a-layout>
   </a-layout>
 </template>
 <script lang="ts">
 import SideBarView from './SideBarView.vue';
-import headerView from './HeaderView.vue';
-import footerView from './FooterView.vue';
+import HeaderView from './HeaderView.vue';
+import FooterView from './FooterView.vue';
+
 export default {
   components: {
     SideBarView,
-    headerView,
-    footerView
+    HeaderView,
+    FooterView,
   },
   setup() {
     return {

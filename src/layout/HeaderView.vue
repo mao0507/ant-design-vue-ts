@@ -2,7 +2,7 @@
   <a-layout-header class="headerNav">
     <!-- sideBar switch Button -->
     <div>
-      <ant-design-menu-outlined 
+      <ant-menu-outlined 
         class="trigger"
         @click="switchDisplay()"
       />
@@ -29,7 +29,7 @@
           </a-menu>
         </template>
         <a-button class="headerButton" style="margin-right: 10px;">
-          <ant-design-message-filled/>
+          <ant-message-filled/>
           <span >Zh-tw</span>
         </a-button>
       </a-dropdown>
@@ -41,13 +41,13 @@
           <a-menu>
             <a-menu-item key="1" >
               <div class="menuItem">
-                <ant-design-setting-outlined/>
+                <ant-setting-outlined/>
                 <span>更改密碼</span>
               </div>
             </a-menu-item>
             <a-menu-item key="2" >
               <div class="menuItem">
-                <ant-design-key-outlined />
+                <ant-key-outlined />
                 <span>登出</span>
               </div>
               
@@ -56,7 +56,7 @@
           </a-menu>
         </template>
         <a-button class="headerButton">
-          <ant-design-user-outlined />
+          <ant-user-outlined />
           <span>Admin</span>
         </a-button>
       </a-dropdown>

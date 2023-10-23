@@ -14,13 +14,17 @@
         alt="logo" 
       >
       <span>控端</span>
+      <component :is="'ant-design-dashboard-outlined'"/>
     </div>
   </div>
-  <a-menu theme="dark" mode="inline">
+
+  <sideBarMenu :data="sideBarData"/>
+
+
+  <!-- <a-menu theme="dark" mode="inline">
     
-    <a-menu-item v-for="item in 10 " :key="item">
-      <user-outlined />
-      <span>nav {{ item }}</span>
+    <a-menu-item v-for="item in sideBarData " :key="item">
+      <span>{{item.name}}</span>
     </a-menu-item>
 
     <a-sub-menu key="sub2">
@@ -33,21 +37,35 @@
       <a-menu-item key="6">Team 1</a-menu-item>
       <a-menu-item key="8">Team 2</a-menu-item>
     </a-sub-menu>
-  </a-menu>
+  </a-menu> -->
 </a-layout-sider>
 </template>
 
-<script lang='ts'>
+<script lang='ts' type="module">
 import { computed } from 'vue'
 import { useSideBarStore } from '../stores/sideBarStore'
-export default {
-  setup() {
 
+import sideBarMenu from '../components/sideBar/sideBarMenu.vue'
+
+// 假資料
+import { default as mock } from '../mock/sidebar.json'
+
+export default {
+  components: {
+    sideBarMenu
+  },
+  setup() {
     const sideBarStore = useSideBarStore()
     const sideBarDisplay = computed(() => sideBarStore.display)
+    // 取得資料
+    sideBarStore.getSideBarData(mock);
+    // 從 store 取得 sideBar
+    const sideBarData = computed(() => sideBarStore.sideBar)
+    
 
     return {
-      sideBarDisplay
+      sideBarDisplay,
+      sideBarData
     };
   },
 };
