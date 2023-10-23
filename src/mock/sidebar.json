@@ -4,15 +4,26 @@
     "code": "default",
     "name": "首頁",
     "url": "",
-    "icon": "fa-dashboard",
+    "icon": "ant-design:home-outlined",
     "parentId": null,
     "sort": 0,
     "subMenu": [
       {
+        "featuresId": "fb0d505e-a340-4808-b073-0579fb41651b",
+        "code": "home",
+        "name": "登入頁面",
+        "url": "/",
+        "featuresType": 0,
+        "icon": "",
+        "parentId": "208d082f-2883-47ff-9432-7315394a84da",
+        "sort": 0,
+        "subMenu": []
+      },
+      {
         "featuresId": "89d01a7e-3ea2-4476-95dd-8a7f09e1d9f1",
         "code": "dashboard",
         "name": "儀表板",
-        "url": "backend/Default/Index",
+        "url": "/dashBoard",
         "featuresType": 0,
         "icon": "",
         "parentId": "208d082f-2883-47ff-9432-7315394a84da",
