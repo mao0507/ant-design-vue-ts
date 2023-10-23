@@ -7,13 +7,18 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    AntDesignDownOutlined: typeof import('~icons/ant-design/down-outlined')['default']
     AntDesignKeyOutlined: typeof import('~icons/ant-design/key-outlined')['default']
     AntDesignMenuOutlined: typeof import('~icons/ant-design/menu-outlined')['default']
     AntDesignMessageFilled: typeof import('~icons/ant-design/message-filled')['default']
     AntDesignSettingOutlined: typeof import('~icons/ant-design/setting-outlined')['default']
     AntDesignUserOutlined: typeof import('~icons/ant-design/user-outlined')['default']
+    AntKeyOutlined: typeof import('~icons/ant-design/key-outlined')['default']
+    AntMenuOutlined: typeof import('~icons/ant-design/menu-outlined')['default']
+    AntMessageFilled: typeof import('~icons/ant-design/message-filled')['default']
+    AntSettingOutlined: typeof import('~icons/ant-design/setting-outlined')['default']
+    AntUserOutlined: typeof import('~icons/ant-design/user-outlined')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SideBarMenu: typeof import('./src/components/sideBar/sideBarMenu.vue')['default']
   }
 }
