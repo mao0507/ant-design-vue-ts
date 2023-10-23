@@ -12,12 +12,15 @@ import IconsResolver from 'unplugin-icons/resolver'
 export default defineConfig({
   plugins: [
     vue(),
-    Icons({}),
+    Icons({ compiler: 'vue3' }),
     Components({
       resolvers: [
         IconsResolver({
           prefix: false,
           enabledCollections: ['ant-design'],
+          alias: {
+            ant: 'ant-design',
+          },
         }),
       ],
     }),
@@ -26,5 +29,13 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
+  },
+  server: {
+    proxy: {
+      '/api': process.env.VUE_APP_RESOURCE_API ? process.env.VUE_APP_RESOURCE_API : '',
+    },
+  },
+  define: {
+    'process.env': {},
   },
 })
