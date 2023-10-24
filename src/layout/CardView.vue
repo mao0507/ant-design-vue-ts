@@ -1,13 +1,20 @@
 <template>
 <a-layout-content
   :style="{ 
-    margin: '24px 16px 12px 16px', 
-    padding: '24px',
+    'margin-left':props.marginLeft + 'px',
+    'margin-top':props.marginTop + 'px',
+    'margin-right':props.marginRight + 'px',
+    'margin-bottom':props.marginBottom + 'px' ,
+    'padding-left':props.paddingLeft + 'px',
+    'padding-top':props.paddingTop + 'px',
+    'padding-right':props.paddingRight + 'px',
+    'padding-bottom':props.paddingBottom + 'px' ,
     background: '#fff',
-    minHeight: minH,
-    maxHeight: maxH
+    minHeight: props.minHeight + 'px',
+    maxHeight: props.maxHeight + 'px'
   }"
 >
+  <!-- 內嵌項目 -->
   <slot></slot>
 </a-layout-content>
 </template>
@@ -15,21 +22,53 @@
 <script lang='ts'>
 export default {
   props: {
-    min: {
+    //高度相關
+    minHeight: {
       type: Number,
       default:280
     },
-    max: {
+    maxHeight: {
       type: Number,
       default:800
-    }
+    },
+    //內距處理
+    paddingLeft: {
+      type: Number,
+      default:24
+    },
+    paddingRight: {
+      type: Number,
+      default:24
+    },
+    paddingTop: {
+      type: Number,
+      default:24
+    },
+    paddingBottom: {
+      type: Number,
+      default:24
+    },
+    //外距
+    marginTop: {
+      type: Number,
+      default:24
+    },
+    marginLeft: {
+      type: Number,
+      default:16
+    },
+    marginRight: {
+      type: Number,
+      default:16
+    },
+    marginBottom: {
+      type: Number,
+      default:16
+    },
   },
   setup(props) {
-    const minH = props.min + 'px'
-    const maxH = props.max + 'px'
     return {
-      minH,
-      maxH
+      props
     }
   },
 };
