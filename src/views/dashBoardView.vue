@@ -1,16 +1,21 @@
 <template>
 <a-row>
   <a-col :span="12">
-    <CardView :max="300">
+    <CardView 
+      :maxHeight="300"
+      :paddingBottom="30"
+    >
     <h3 style="font-weight: bold;">
       在線人數 (線圖)
     </h3>
-
     <canvas ref="lineChartEl"></canvas>
   </CardView> 
   </a-col>
   <a-col :span="12">
-    <CardView :max="300">
+    <CardView 
+      :maxHeight="300" 
+      :paddingBottom="30"
+    >
     <h3>
       在線人數 (長條圖)
     </h3>
