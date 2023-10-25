@@ -309,7 +309,9 @@ body {
 				}
 			}
 			a {
-				color: inherit;
+				//修正顏色
+				//color: inherit;
+				color:rgba(255, 255, 255, 0.65);
 			}
 		}
 	}
