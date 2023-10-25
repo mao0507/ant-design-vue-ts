@@ -26,26 +26,26 @@ import { useSideBarStore } from '../stores/sideBarStore';
 import sideBarMenu from '../components/sideBar/sideBarMenu.vue';
 // 假資料
 /*eslint-disable */
-import { default as mock } from '../mock/sidebar.json'
+import { default as mock } from '../mock/sidebar.json';
 
 export default {
   components: {
     sideBarMenu,
   },
   setup() {
-    const sideBarStore = useSideBarStore()
-    const sideBarDisplay = computed(() => sideBarStore.display)
+    const sideBarStore = useSideBarStore();
+    const sideBarDisplay = computed(() => sideBarStore.display);
     // 取得資料
-    sideBarStore.getSideBarData(mock)
+    sideBarStore.getSideBarData(mock);
     // 從 store 取得 sideBar
-    const sideBarData = computed(() => sideBarStore.sideBar)
+    const sideBarData = computed(() => sideBarStore.sideBar);
 
     return {
       sideBarDisplay,
       sideBarData,
-    }
+    };
   },
-}
+};
 </script>
 <style scoped lang="sass">
 
