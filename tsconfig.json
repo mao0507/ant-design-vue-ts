@@ -9,6 +9,11 @@
     }
   ],
   "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "types": [
       "vite/client",
       "node"
