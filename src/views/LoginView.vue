@@ -1,19 +1,9 @@
 <template>
   <div class="loginLayout">
     <a-card title="Sign In" :bordered="false" style="width: 400px">
-      <a-form
-        :model="formState"
-        name="normal_login"
-        class="login-form"
-        @finish="onFinish"
-        @finishFailed="onFinishFailed"
-      >
-        <a-form-item
-          label="Account"
-          name="account"
-          :rules="[{ required: true, message: 'Please input your account!' }]"
-          class="loginItem"
-        >
+      <a-form :model="formState" name="normal_login" class="login-form" @finish="onFinish" @finishFailed="onFinishFailed">
+        <a-form-item label="Account" name="account" :rules="[{ required: true, message: 'Please input your account!' }]"
+          class="loginItem">
           <a-input v-model:value="formState.account">
             <template #prefix>
               <ant-UserOutlined class="site-form-item-icon" />
@@ -21,12 +11,8 @@
           </a-input>
         </a-form-item>
 
-        <a-form-item
-          label="Password"
-          name="password"
-          :rules="[{ required: true, message: 'Please input your password!' }]"
-          class="loginItem"
-        >
+        <a-form-item label="Password" name="password"
+          :rules="[{ required: true, message: 'Please input your password!' }]" class="loginItem">
           <a-input-password v-model:value="formState.password">
             <template #prefix>
               <ant-LockOutlined class="site-form-item-icon" />
@@ -35,35 +21,25 @@
         </a-form-item>
 
 
-        <a-form-item
-          label="Captcha"
-          name="captcha"
-          :rules="[{ required: true, message: 'Please input your Captcha!' }]"
-          class="loginItem"
-        >
+        <a-form-item label="Captcha" name="captcha" :rules="[{ required: true, message: 'Please input your Captcha!' }]"
+          class="loginItem">
           <a-input v-model:value="formState.captcha">
             <template #prefix>
               <ant-design-safety-certificate-outlined class="site-form-item-icon" />
             </template>
           </a-input>
         </a-form-item>
-      
+
 
         <a-form-item class="loginButton">
-          <a-button 
-            type="primary" 
-            html-type="submit" 
-            class="login-form-button"
-            style="width: 100%;"
-          >
+          <a-button type="primary" html-type="submit" class="login-form-button" style="width: 100%;">
             Log in
           </a-button>
-          
+
         </a-form-item>
       </a-form>
     </a-card>
   </div>
- 
 </template>
 
 <script lang='ts' >
