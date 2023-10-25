@@ -20,24 +20,6 @@
 
   <sideBarMenu :data="sideBarData"/>
 
-
-  <!-- <a-menu theme="dark" mode="inline">
-    
-    <a-menu-item v-for="item in sideBarData " :key="item">
-      <span>{{item.name}}</span>
-    </a-menu-item>
-
-    <a-sub-menu key="sub2">
-      <template #title>
-        <span>
-          <team-outlined />
-          <span>Team</span>
-        </span>
-      </template>
-      <a-menu-item key="6">Team 1</a-menu-item>
-      <a-menu-item key="8">Team 2</a-menu-item>
-    </a-sub-menu>
-  </a-menu> -->
 </a-layout-sider>
 </template>
 
@@ -46,7 +28,6 @@ import { computed } from 'vue'
 import { useSideBarStore } from '../stores/sideBarStore'
 
 import sideBarMenu from '../components/sideBar/sideBarMenu.vue'
-
 // 假資料
 import { default as mock } from '../mock/sidebar.json'
 
