@@ -29,6 +29,17 @@
         "parentId": "208d082f-2883-47ff-9432-7315394a84da",
         "sort": 0,
         "subMenu": []
+      },
+      {
+        "featuresId": "a664a1e2-2a9d-44e8-b0b8-9e233c232834",
+        "code": "login",
+        "name": "登入頁面",
+        "url": "/login",
+        "featuresType": 0,
+        "icon": "",
+        "parentId": "208d082f-2883-47ff-9432-7315394a84da",
+        "sort": 0,
+        "subMenu": []
       }
     ]
   },
