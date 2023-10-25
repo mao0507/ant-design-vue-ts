@@ -2,7 +2,7 @@
   <a-layout-header class="headerNav">
     <!-- sideBar switch Button -->
     <div>
-      <ant-menu-outlined 
+      <ant-menu-outlined
         class="trigger"
         @click="switchDisplay()"
       />
@@ -50,9 +50,9 @@
                 <ant-key-outlined />
                 <span>登出</span>
               </div>
-              
+
             </a-menu-item>
-         
+
           </a-menu>
         </template>
         <a-button class="headerButton">
@@ -61,28 +61,24 @@
         </a-button>
       </a-dropdown>
 
-
-
     </div>
-
-    
 
   </a-layout-header>
 </template>
 
 <script lang='ts'>
 import { computed } from 'vue';
-import { useSideBarStore } from '../stores/sideBarStore'
+import { useSideBarStore } from '../stores/sideBarStore';
 
 export default {
   setup() {
     const store = useSideBarStore();
-    const display = computed(() => store.display)
-    const switchDisplay = () => store.switchDisplay()
+    const display = computed(() => store.display);
+    const switchDisplay = () => store.switchDisplay();
 
     return {
       display,
-      switchDisplay
+      switchDisplay,
     };
   },
 };
@@ -108,13 +104,12 @@ export default {
   .menuItem
     display: flex
     align-items: center
-    > svg 
+    > svg
       margin-right: 5px
-    > span 
+    > span
       margin: 0px 3px
-    
 
-  .trigger:hover 
+  .trigger:hover
     cursor: pointer
 
 </style>

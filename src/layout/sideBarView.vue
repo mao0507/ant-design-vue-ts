@@ -1,70 +1,66 @@
 <template>
- <a-layout-sider 
-  v-model:collapsed="sideBarDisplay" 
-  :width="230"
-  :collapsedWidth="0"
-  :trigger="null" 
-  collapsible 
-  class="sideBarStyle"
->
-  <div class="logo">
-    <div class="imgBox">
-      <img 
-        src="../assets/img/logo.png" 
-        alt="logo" 
-      >
-      <span>控端</span>
-      <component :is="'ant-design-dashboard-outlined'"/>
+  <a-layout-sider
+    v-model:collapsed="sideBarDisplay"
+    :width="230"
+    :collapsedWidth="0"
+    :trigger="null"
+    collapsible
+    class="sideBarStyle"
+  >
+    <div class="logo">
+      <div class="imgBox">
+        <img src="../assets/img/logo.png" alt="logo" />
+        <span>控端</span>
+        <component :is="'ant-design-dashboard-outlined'" />
+      </div>
     </div>
-  </div>
 
-  <sideBarMenu :data="sideBarData"/>
-
-</a-layout-sider>
+    <sideBarMenu :data="sideBarData" />
+  </a-layout-sider>
 </template>
 
-<script lang='ts' type="module">
-import { computed } from 'vue'
-import { useSideBarStore } from '../stores/sideBarStore'
+<script lang="ts" type="module">
+import { computed } from 'vue';
+import { useSideBarStore } from '../stores/sideBarStore';
 
-import sideBarMenu from '../components/sideBar/sideBarMenu.vue'
+import sideBarMenu from '../components/sideBar/sideBarMenu.vue';
 // 假資料
+/*eslint-disable */
 import { default as mock } from '../mock/sidebar.json'
 
 export default {
   components: {
-    sideBarMenu
+    sideBarMenu,
   },
   setup() {
     const sideBarStore = useSideBarStore()
     const sideBarDisplay = computed(() => sideBarStore.display)
     // 取得資料
-    sideBarStore.getSideBarData(mock);
+    sideBarStore.getSideBarData(mock)
     // 從 store 取得 sideBar
     const sideBarData = computed(() => sideBarStore.sideBar)
-    
 
     return {
       sideBarDisplay,
-      sideBarData
-    };
+      sideBarData,
+    }
   },
-};
+}
 </script>
 <style scoped lang="sass">
 
-.sideBarStyle 
-  height: 100vh 
+.sideBarStyle
+  height: 100vh
   overflow: auto
 
 .logo
   margin:15px 0px
-  > .imgBox 
+  > .imgBox
     display: flex
     justify-content: center
     align-items: center
     flex-direction: column
-    > img 
+    > img
       height: auto
       max-width: 100%
     > span
@@ -74,20 +70,18 @@ export default {
 /* ⬇️ sideBar scroll style ⬇️ */
 
 /* width */
-::-webkit-scrollbar 
+::-webkit-scrollbar
   width: 10px
 
 /* Track */
-::-webkit-scrollbar-track 
+::-webkit-scrollbar-track
   background: #f1f1f1
- 
+
 /* Handle */
-::-webkit-scrollbar-thumb 
+::-webkit-scrollbar-thumb
   background: #888
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover 
+::-webkit-scrollbar-thumb:hover
   background: #555
-
-
 </style>

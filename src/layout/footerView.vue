@@ -9,13 +9,13 @@ export default {
   props: {
     footerContent: {
       type: String,
-      default:'Ant Design ©2018 Created by Ant UED'
-    }
+      default: 'Ant Design ©2018 Created by Ant UED',
+    },
   },
   setup(props) {
-    const content = props.footerContent
+    const content = props.footerContent;
     return {
-      content
+      content,
     };
   },
 };

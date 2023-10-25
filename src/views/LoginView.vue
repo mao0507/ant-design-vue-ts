@@ -1,9 +1,19 @@
 <template>
   <div class="loginLayout">
     <a-card title="Sign In" :bordered="false" style="width: 400px">
-      <a-form :model="formState" name="normal_login" class="login-form" @finish="onFinish" @finishFailed="onFinishFailed">
-        <a-form-item label="Account" name="account" :rules="[{ required: true, message: 'Please input your account!' }]"
-          class="loginItem">
+      <a-form
+        :model="formState"
+        name="normal_login"
+        class="login-form"
+        @finish="onFinish"
+        @finishFailed="onFinishFailed"
+      >
+        <a-form-item
+          label="Account"
+          name="account"
+          :rules="[{ required: true, message: 'Please input your account!' }]"
+          class="loginItem"
+        >
           <a-input v-model:value="formState.account">
             <template #prefix>
               <ant-UserOutlined class="site-form-item-icon" />
@@ -11,8 +21,12 @@
           </a-input>
         </a-form-item>
 
-        <a-form-item label="Password" name="password"
-          :rules="[{ required: true, message: 'Please input your password!' }]" class="loginItem">
+        <a-form-item
+          label="Password"
+          name="password"
+          :rules="[{ required: true, message: 'Please input your password!' }]"
+          class="loginItem"
+        >
           <a-input-password v-model:value="formState.password">
             <template #prefix>
               <ant-LockOutlined class="site-form-item-icon" />
@@ -20,37 +34,45 @@
           </a-input-password>
         </a-form-item>
 
-
-        <a-form-item label="Captcha" name="captcha" :rules="[{ required: true, message: 'Please input your Captcha!' }]"
-          class="loginItem">
+        <a-form-item
+          label="Captcha"
+          name="captcha"
+          :rules="[{ required: true, message: 'Please input your Captcha!' }]"
+          class="loginItem"
+        >
           <a-input v-model:value="formState.captcha">
             <template #prefix>
-              <ant-design-safety-certificate-outlined class="site-form-item-icon" />
+              <ant-design-safety-certificate-outlined
+                class="site-form-item-icon"
+              />
             </template>
           </a-input>
         </a-form-item>
 
-
         <a-form-item class="loginButton">
-          <a-button type="primary" html-type="submit" class="login-form-button" style="width: 100%;">
+          <a-button
+            type="primary"
+            html-type="submit"
+            class="login-form-button"
+            style="width: 100%"
+          >
             Log in
           </a-button>
-
         </a-form-item>
       </a-form>
     </a-card>
   </div>
 </template>
 
-<script lang='ts' >
-
+<script lang="ts">
 import { reactive } from 'vue';
+
 export default {
   setup() {
     interface FormState {
-      account: string;
-      password: string;
-      captcha: string;
+      account: string
+      password: string
+      captcha: string
     }
     const formState = reactive<FormState>({
       account: '',
@@ -68,10 +90,10 @@ export default {
     return {
       formState,
       onFinish,
-      onFinishFailed
-    }
-  }
-}
+      onFinishFailed,
+    };
+  },
+};
 </script>
 <style lang="sass" scope>
 
@@ -84,11 +106,10 @@ export default {
   justify-content: center
   padding-bottom: 180px
 
-
 //調整提示文字位置
 div[role='alert']
   margin:10px
-    
+
 //調整版面物件位置
 .loginItem
   //因為只加入class會綁定到目標上一層，無法對應到指定元素改寫，
@@ -114,5 +135,4 @@ div[role='alert']
 //調整line-height
 .ant-form-item-label
   line-height: 10px
-
 </style>

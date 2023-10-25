@@ -22,62 +22,62 @@
 export default {
   props: {
     title: {
-      type: String
+      type: String,
     },
-    //寬度相關
+    // 寬度相關
     minWidth: {
       type: Number,
     },
     maxWidth: {
       type: Number,
     },
-    //高度相關
+    // 高度相關
     minHeight: {
       type: Number,
-      default: 280
+      default: 280,
     },
     maxHeight: {
       type: Number,
     },
-    //內距處理
+    // 內距處理
     paddingLeft: {
       type: Number,
-      default: 24
+      default: 24,
     },
     paddingRight: {
       type: Number,
-      default: 24
+      default: 24,
     },
     paddingTop: {
       type: Number,
-      default: 24
+      default: 24,
     },
     paddingBottom: {
       type: Number,
-      default: 24
+      default: 24,
     },
-    //外距
+    // 外距
     marginTop: {
       type: Number,
-      default: 24
+      default: 24,
     },
     marginLeft: {
       type: Number,
-      default: 16
+      default: 16,
     },
     marginRight: {
       type: Number,
-      default: 16
+      default: 16,
     },
     marginBottom: {
       type: Number,
-      default: 16
+      default: 16,
     },
   },
   setup(props) {
     return {
-      props
-    }
+      props,
+    };
   },
 };
 </script>

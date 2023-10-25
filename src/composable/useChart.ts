@@ -1,5 +1,5 @@
-import { Chart, registerables } from 'chart.js'
-import { unref } from 'vue'
+import { Chart, registerables } from 'chart.js';
+import { unref } from 'vue';
 
 /**
  * 建立 ChartJs 圖表所需的 設定參數
@@ -21,10 +21,10 @@ const createdOption = (scales: object) => {
       },
     },
     scales,
-  }
+  };
 
-  return option
-}
+  return option;
+};
 
 /**
  * 專門渲染線圖
@@ -40,29 +40,29 @@ export function useLineChart(
   data: Array<object>,
   scales: object,
 ) {
-  const el = unref(target)
+  const el = unref(target);
 
   const datasets = data.map((x: any) => {
     if (x.color) {
-      x.borderColor = x?.color
-      x.backgroundColor = x?.color
+      x.borderColor = x?.color;
+      x.backgroundColor = x?.color;
     }
-    x.tension = 0.4
-    return x
-  })
+    x.tension = 0.4;
+    return x;
+  });
 
-  const options: object = createdOption(scales)
+  const options: object = createdOption(scales);
 
-  Chart.register(...registerables)
+  Chart.register(...registerables);
 
   return new Chart(el, {
     type: 'line',
     data: {
-      labels: labels,
-      datasets: datasets,
+      labels,
+      datasets,
     },
     options,
-  })
+  });
 }
 
 /**
@@ -79,25 +79,25 @@ export function useBarChart(
   data: Array<object>,
   scales: object,
 ) {
-  const el = unref(target)
+  const el = unref(target);
 
   const datasets = data.map((x: any) => {
     if (x.color) {
-      x.borderColor = x?.color
-      x.backgroundColor = x?.color
+      x.borderColor = x?.color;
+      x.backgroundColor = x?.color;
     }
-    x.barThickness = 8
-    return x
-  })
+    x.barThickness = 8;
+    return x;
+  });
 
-  const options: object = createdOption(scales)
+  const options: object = createdOption(scales);
 
   return new Chart(el, {
     type: 'bar',
     data: {
-      labels: labels,
-      datasets: datasets,
+      labels,
+      datasets,
     },
     options,
-  })
+  });
 }
