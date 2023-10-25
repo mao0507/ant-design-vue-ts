@@ -1,21 +1,21 @@
 <template>
-  <a-layout style="min-height: 100vh; ">
+  <a-layout style="min-height: 100vh">
     <!-- SideBar -->
-    <SideBarView/>
+    <SideBarView />
     <a-layout>
       <!-- Header -->
-      <HeaderView/>
+      <HeaderView />
       <!-- Content -->
       <RouterView></RouterView>
       <!-- Footer -->
-      <FooterView/>
+      <FooterView />
     </a-layout>
   </a-layout>
 </template>
 <script lang="ts">
-import SideBarView from './SideBarView.vue';
-import HeaderView from './HeaderView.vue';
-import FooterView from './FooterView.vue';
+import SideBarView from '@/layout/SideBarView.vue';
+import HeaderView from '@/layout/HeaderView.vue';
+import FooterView from '@/layout/FooterView.vue';
 
 export default {
   components: {
@@ -24,9 +24,7 @@ export default {
     FooterView,
   },
   setup() {
-    return {
-    };
+    return {};
   },
-
 };
 </script>
