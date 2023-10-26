@@ -28,14 +28,14 @@ const createdOption = (scales: object) => {
 
 /**
  * 專門渲染線圖
- * @param { string } target canvas 所需要渲染的位置
+ * @param { any } target canvas 所需要渲染的位置
  * @param { Array<string> } labels 圖表下方的 x軸 顯示文字
  * @param { Array<object> } data  圖表資料
  * @param { object } scales x,y軸的細項設定
  * @returns
  */
 export function useLineChart(
-  target: string,
+  target: any,
   labels: Array<string>,
   data: Array<object>,
   scales: object,
@@ -67,14 +67,14 @@ export function useLineChart(
 
 /**
  * 專門渲染長條圖
- * @param { string } target canvas 所需要渲染的位置
+ * @param { any } target canvas 所需要渲染的位置
  * @param { Array<string> } labels 圖表下方的 x軸 顯示文字
  * @param { Array<object> } data  圖表資料
  * @param { object } scales x,y軸的細項設定
  * @returns
  */
 export function useBarChart(
-  target: string,
+  target: any,
   labels: Array<string>,
   data: Array<object>,
   scales: object,
