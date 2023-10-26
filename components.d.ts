@@ -7,12 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    AntDesignKeyOutlined: typeof import('~icons/ant-design/key-outlined')['default']
-    AntDesignMenuOutlined: typeof import('~icons/ant-design/menu-outlined')['default']
-    AntDesignMessageFilled: typeof import('~icons/ant-design/message-filled')['default']
     AntDesignSafetyCertificateOutlined: typeof import('~icons/ant-design/safety-certificate-outlined')['default']
-    AntDesignSettingOutlined: typeof import('~icons/ant-design/setting-outlined')['default']
-    AntDesignUserOutlined: typeof import('~icons/ant-design/user-outlined')['default']
     AntKeyOutlined: typeof import('~icons/ant-design/key-outlined')['default']
     AntLockOutlined: typeof import('~icons/ant-design/lock-outlined')['default']
     AntMenuOutlined: typeof import('~icons/ant-design/menu-outlined')['default']
