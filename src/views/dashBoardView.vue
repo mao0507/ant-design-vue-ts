@@ -40,15 +40,15 @@
 <script lang="ts">
 import { onMounted, ref } from 'vue';
 import { useLineChart, useBarChart } from '@/composable/useChart';
-import CardView from '../layout/CardView.vue';
+import CardView from '@/layout/CardView.vue';
 
 export default {
   components: {
     CardView,
   },
   setup() {
-    const lineChartEl = ref(null);
-    const barChartEl = ref(null);
+    const lineChartEl = ref<any>(null);
+    const barChartEl = ref<any>(null);
     const labels = ['10/16', '10/17', '10/18', '10/19', '10/20', '10/21'];
     const data = [
       {
