@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
 // 加入 module
-import type { sideBar } from '@/module/mock/sideBar';
+import type { sideBar } from '@/module/sideBarModule';
 
 export const useSideBarStore = defineStore('sidebar', {
   state: () => ({
