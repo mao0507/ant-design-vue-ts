@@ -20,6 +20,8 @@
     ],
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "Node"
   },
   "include": [
     "src/**/*.ts",
