@@ -38,7 +38,7 @@
 
 <script lang="ts">
 import { Icon } from '@iconify/vue';
-import { sideBar } from '@/module/mock/sideBar';
+import type { sideBar } from '@/module/sideBarModule';
 
 export default {
   components: {
