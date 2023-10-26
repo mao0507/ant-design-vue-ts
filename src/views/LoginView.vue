@@ -2,7 +2,7 @@
   <div class="loginLayout">
     <a-card title="Sign In" :bordered="false" style="width: 400px">
       <a-form
-        :model="formState"
+        :model="loginState"
         name="normal_login"
         class="login-form"
         @finish="onFinish"
@@ -14,7 +14,7 @@
           :rules="[{ required: true, message: 'Please input your account!' }]"
           class="loginItem"
         >
-          <a-input v-model:value="formState.account">
+          <a-input v-model:value="loginState.account">
             <template #prefix>
               <ant-UserOutlined class="site-form-item-icon" />
             </template>
@@ -27,7 +27,7 @@
           :rules="[{ required: true, message: 'Please input your password!' }]"
           class="loginItem"
         >
-          <a-input-password v-model:value="formState.password">
+          <a-input-password v-model:value="loginState.password">
             <template #prefix>
               <ant-LockOutlined class="site-form-item-icon" />
             </template>
@@ -35,12 +35,13 @@
         </a-form-item>
 
         <a-form-item
+          v-if="useCaptcha"
           label="Captcha"
           name="captcha"
           :rules="[{ required: true, message: 'Please input your Captcha!' }]"
           class="loginItem"
         >
-          <a-input v-model:value="formState.captcha">
+          <a-input v-model:value="loginState.captcha">
             <template #prefix>
               <ant-design-safety-certificate-outlined
                 class="site-form-item-icon"
@@ -65,22 +66,26 @@
 </template>
 
 <script lang="ts">
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
+import type { loginInfo } from '@/module/loginModule';
+
+import { login } from '@/composable/useLogin';
 
 export default {
   setup() {
-    interface FormState {
-      account: string
-      password: string
-      captcha: string
-    }
-    const formState = reactive<FormState>({
-      account: '',
-      password: '',
+    const useCaptcha = ref<Boolean>(
+      import.meta.env.VITE_USE_CAPTCHA === 'true',
+    );
+    const loginState = reactive<loginInfo>({
+      account: 'mao',
+      password: 'mao',
       captcha: '',
     });
-    const onFinish = (values: any) => {
+    const onFinish = async (values: any) => {
       console.log('Success:', values);
+
+      const resp = await login(values);
+      console.log(resp);
     };
 
     const onFinishFailed = (errorInfo: any) => {
@@ -88,7 +93,8 @@ export default {
     };
 
     return {
-      formState,
+      useCaptcha,
+      loginState,
       onFinish,
       onFinishFailed,
     };
