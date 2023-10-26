@@ -5,7 +5,7 @@ import axios from 'axios';
  * Header有帶JWT token
  */
 const service = axios.create({
-  baseURL: import.meta.env.NODE_ENV === 'development' ? import.meta.env.VUE_APP_RESOURCE_API : '/',
+  baseURL: import.meta.env.NODE_ENV === 'development' ? import.meta.env.VITE_API_URL : '/',
   timeout: 90000,
 });
 
