@@ -2,6 +2,7 @@
   <div class="loginLayout">
     <a-card title="Sign In" :bordered="false" style="width: 400px">
       <a-form
+        layout="vertical"
         :model="loginState"
         name="normal_login"
         class="login-form"
@@ -111,34 +112,4 @@ export default {
   align-items: center
   justify-content: center
   padding-bottom: 180px
-
-//調整提示文字位置
-div[role='alert']
-  margin:10px
-
-//調整版面物件位置
-.loginItem
-  //因為只加入class會綁定到目標上一層，無法對應到指定元素改寫，
-  //故往下指定ant-row來進行變動
-  > .ant-row
-    display: flex
-    flex-direction: column
-
-//登入按鈕
-.loginButton
-  > .ant-row
-    margin-top: 20px
-
-// 調整輸入框之間的 margin-bottom
-:where(.css-dev-only-do-not-override-185kyl0).ant-form-item
-  margin-bottom: 0px
-// 調整label文字位置
-:where(.css-dev-only-do-not-override-185kyl0).ant-form-item .ant-form-item-label
-  text-align: start
-//調整錯誤訊息顯示時，排版會跑動內縮問題
-:where(.css-dev-only-do-not-override-185kyl0).ant-form-horizontal .ant-form-item-control
-  flex:1 1 auto
-//調整line-height
-.ant-form-item-label
-  line-height: 10px
 </style>
