@@ -405,6 +405,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@intlify/core-base@npm:9.6.0":
+  version: 9.6.0
+  resolution: "@intlify/core-base@npm:9.6.0"
+  dependencies:
+    "@intlify/message-compiler": 9.6.0
+    "@intlify/shared": 9.6.0
+  checksum: 6d043e19c4a3b8cc85c374c4113f1f3e451d2c889797276f3ab414d3e73686b35e937773217af1f1c417c7325e71d58626416b6f85c56b5bbff597e0df3af052
+  languageName: node
+  linkType: hard
+
+"@intlify/message-compiler@npm:9.6.0":
+  version: 9.6.0
+  resolution: "@intlify/message-compiler@npm:9.6.0"
+  dependencies:
+    "@intlify/shared": 9.6.0
+    source-map-js: ^1.0.2
+  checksum: 9079d3bcc60812c945d3295be4cf683944f974eafb065f00341ca139deb146def0b3e6cd43ed8582dfabd2f3b261add4010be57a1da530efb7503081fad11120
+  languageName: node
+  linkType: hard
+
+"@intlify/shared@npm:9.6.0":
+  version: 9.6.0
+  resolution: "@intlify/shared@npm:9.6.0"
+  checksum: f9f13b892ac02c20c822ac98763c3d239730dc4a400ae96eb1970911260e906f4f4bb0292c32926dcd9180a01dc6b8b7c6c5b694c351d3cbfdf2ac5bf845c7db
+  languageName: node
+  linkType: hard
+
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -1510,6 +1537,13 @@ __metadata:
   version: 3.1.2
   resolution: "csstype@npm:3.1.2"
   checksum: e1a52e6c25c1314d6beef5168da704ab29c5186b877c07d822bd0806717d9a265e8493a2e35ca7e68d0f5d472d43fac1cdce70fd79fd0853dff81f3028d857b5
+  languageName: node
+  linkType: hard
+
+"csv-parse@npm:^5.5.2":
+  version: 5.5.2
+  resolution: "csv-parse@npm:5.5.2"
+  checksum: de2eb0c29b049783ef101b7eb843456200dc9a4fc9f4b400473bb0521b41aadb77af560cf4edc49bac65cc457b32596519860120181b26ec3b372109ddf8e8ea
   languageName: node
   linkType: hard
 
@@ -4833,6 +4867,7 @@ __metadata:
     ant-design-vue: 4.x
     axios: ^1.5.1
     chart.js: ^4.4.0
+    csv-parse: ^5.5.2
     eslint: ^8.52.0
     eslint-config-airbnb-base: ^15.0.0
     eslint-import-resolver-alias: ^1.1.2
@@ -4847,6 +4882,7 @@ __metadata:
     unplugin-vue-components: ^0.25.2
     vite: ^4.4.9
     vue: ^3.3.4
+    vue-i18n: 9
     vue-router: ^4.2.4
     vue-tsc: ^1.8.11
   languageName: unknown
@@ -4922,6 +4958,19 @@ __metadata:
   peerDependencies:
     eslint: ">=6.0.0"
   checksum: f55056fcd94b6c9d4e940616294f72fb20ae9561a23bc2d7f32499307db7af128dc84d8c43cb8c1a267e0c5d34fc61a9215656a5ea7413df4f58eec81175c6ad
+  languageName: node
+  linkType: hard
+
+"vue-i18n@npm:9":
+  version: 9.6.0
+  resolution: "vue-i18n@npm:9.6.0"
+  dependencies:
+    "@intlify/core-base": 9.6.0
+    "@intlify/shared": 9.6.0
+    "@vue/devtools-api": ^6.5.0
+  peerDependencies:
+    vue: ^3.0.0
+  checksum: 87ad4fcfa456ff40b2c2c1bc495665dd7e560790e3637fbbb444e34e726199029a48876bfa5d374e59a6c7fab23c7089d3f1de2c8bbc13c8a2b9eb4ba06bbdf0
   languageName: node
   linkType: hard
 
