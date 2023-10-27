@@ -1,0 +1,11 @@
+key,說明,zh-Hant,zh-Hans,en,th,ko,my,id,vi,ja,ms,es,Laos
+P00001,登入標題,登入系統,登入系统,Login system,,,,,,,,,
+P00002,登入帳號,帳號,帐号,Account,,,,,,,,,
+P00003,登入密碼,密碼,密码,Password,,,,,,,,,
+P00004,登入驗證碼,驗證碼,验证码,Captcha,,,,,,,,,
+P00005,登入按鈕,登入,登入,Login ,,,,,,,,,
+P00006,登入帳號提示,請輸入帳號,请输入帐号,Please enter your account,,,,,,,,,
+P00007,登入密碼提示,請輸入密碼,请输入密码,Please enter password,,,,,,,,,
+P00008,登入驗證碼提示,請輸入驗證碼,请输入验证码,please enter verification code,,,,,,,,,
+P00009,使用者功能 更改密碼,更改密碼,更改密码,change password,,,,,,,,,
+P00010,使用者功能 登出,登出,登出,Logout,,,,,,,,,
