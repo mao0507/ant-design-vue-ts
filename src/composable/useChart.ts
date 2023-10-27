@@ -1,4 +1,4 @@
-import { Chart, registerables } from 'chart.js';
+import { Chart, registerables } from 'chart.js/auto';
 import { unref } from 'vue';
 
 /**
