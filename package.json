@@ -10,13 +10,14 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "git:log": "git log --graph --oneline --decorate --all"
+    "lang": "node tools/langSupport.js"
   },
   "dependencies": {
     "@iconify/json": "^2.2.130",
     "ant-design-vue": "4.x",
     "axios": "^1.5.1",
     "chart.js": "^4.4.0",
+    "csv-parse": "^5.5.2",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.29.0",
@@ -24,6 +25,7 @@
     "unplugin-icons": "^0.17.0",
     "unplugin-vue-components": "^0.25.2",
     "vue": "^3.3.4",
+    "vue-i18n": "9",
     "vue-router": "^4.2.4"
   },
   "devDependencies": {
