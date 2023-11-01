@@ -21,24 +21,32 @@
 
 <script lang="ts" type="module">
 import { computed } from 'vue';
-import { useSideBarStore } from '../stores/sideBarStore';
-
-import sideBarMenu from '../components/sideBar/sideBarMenu.vue';
-// 假資料
-/*eslint-disable */
-import { default as mock } from '../mock/sidebar.json';
+import sideBarMenu from '@/components/sideBar/sideBarMenu.vue';
+import { getStorage } from '@/composable/useStorage';
+import { useSideBarStore } from '@/stores/sideBarStore';
+import { installRouter, initRouter } from '@/composable/useAsyncRouter';
+import router from '@/router';
 
 export default {
   components: {
     sideBarMenu,
   },
   setup() {
+    // 宣告對應的 store
     const sideBarStore = useSideBarStore();
     const sideBarDisplay = computed(() => sideBarStore.display);
-    // 取得資料
-    sideBarStore.getSideBarData(mock);
+
     // 從 store 取得 sideBar
     const sideBarData = computed(() => sideBarStore.sideBar);
+    // 如果 store 沒有資料，去檢查 storage
+    if (sideBarData.value.length === 0) {
+      initRouter('layout');
+      const storageData = JSON.parse(getStorage('sideBar'));
+      sideBarStore.sideBar = storageData;
+      // 重新取得資料得時候，一併重新處理 Router
+      installRouter(storageData);
+      router.push(getStorage('nowPath'));
+    }
 
     return {
       sideBarDisplay,
