@@ -1,20 +1,10 @@
 <template>
-  <router-view v-if="open" />
-  <LoginView v-if="!open" />
+  <router-view />
 </template>
 
-<script lang='ts'>
-import LoginView from '@/views/LoginView.vue';
-import { ref } from 'vue';
-
+<script lang="ts">
 export default {
-  components: {
-    LoginView,
-  },
-  setup() {
-    const open = ref<Boolean>(true);
-    return { open };
-  },
+  setup() {},
 };
 </script>
 <style lang="sass">
