@@ -5,7 +5,10 @@ import axios from 'axios';
  * Header有帶JWT token
  */
 const service = axios.create({
-  baseURL: import.meta.env.NODE_ENV === 'development' ? import.meta.env.VITE_API_URL : '/',
+  baseURL:
+    import.meta.env.NODE_ENV === 'development'
+      ? import.meta.env.VITE_API_URL
+      : '/',
   timeout: 90000,
 });
 
@@ -63,10 +66,11 @@ service.interceptors.response.use(
  * @param { string } url API 位置
  * @returns
  */
-const get = (url: string) => service({
-  url,
-  method: 'get',
-});
+const get = (url: string) =>
+  service({
+    url,
+    method: 'get',
+  });
 
 /**
  * API method Post
@@ -74,11 +78,12 @@ const get = (url: string) => service({
  * @param { any } data 依照API需求傳入對應項目
  * @returns
  */
-const post = (url: string, data: any) => service({
-  url,
-  method: 'post',
-  data,
-});
+const post = (url: string, data: any) =>
+  service({
+    url,
+    method: 'post',
+    data,
+  });
 
 /**
  * API method Put
@@ -86,21 +91,23 @@ const post = (url: string, data: any) => service({
  * @param { any } data 依照API需求傳入對應項目
  * @returns
  */
-const put = (url: string, data: any) => service({
-  url,
-  method: 'put',
-  data,
-});
+const put = (url: string, data: any) =>
+  service({
+    url,
+    method: 'put',
+    data,
+  });
 
 /**
  * API method Delete
  * @param { string } url API 位置
  * @returns
  */
-const remove = (url: string) => service({
-  url,
-  method: 'delete',
-});
+const remove = (url: string) =>
+  service({
+    url,
+    method: 'delete',
+  });
 
 export default {
   get,
