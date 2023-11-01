@@ -17,3 +17,30 @@ $ yarn
 $ yarn dev 
 ```
 
+## 專案介紹
+
+### 使用項目
+
+nodeJs環境版本 : 
+
+* 16.17.1
+ 
+打包工具 : 
+
+* vite
+
+套件管理器 : 
+
+* yarn 
+  
+框架 : 
+
+* Vue3
+
+使用語言 :
+
+* TypeScript
+
+CodeStyle : 
+
+* eslint (airbnb)
