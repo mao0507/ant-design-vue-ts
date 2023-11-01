@@ -6,7 +6,6 @@
         name="normal_login"
         class="login-form"
         @finish="onFinish"
-        @finishFailed="onFinishFailed"
       >
         <a-form-item
           :label="$t('P00002')"
@@ -66,37 +65,77 @@
 </template>
 
 <script lang="ts">
+import router from '@/router';
 import { reactive, ref } from 'vue';
 import type { loginInfo } from '@/module/loginModule';
-import { login } from '@/composable/useLogin';
 import { getLangText } from '@/composable/useLangs';
+import { login } from '@/composable/useLogin';
+import { getSideBar } from '@/composable/useSideBar';
+import { userInfoStore } from '@/stores/userInfoStore';
+import { useSideBarStore } from '@/stores/sideBarStore';
+import { setStorage, removeStorage } from '@/composable/useStorage';
+import {
+  installRouter,
+  resetRouter,
+  initRouter,
+} from '@/composable/useAsyncRouter';
 
 export default {
   setup() {
+    // 依照環境變數，決定是否要使用驗證碼
     const useCaptcha = ref<Boolean>(
       import.meta.env.VITE_USE_CAPTCHA === 'true',
     );
+    // 宣告欄位變數
     const loginState = reactive<loginInfo>({
       account: 'mao',
       password: 'mao',
-      captcha: '',
+      captcha: 'mao',
     });
+    // 宣告對應的 store
+    const userInfo = userInfoStore();
+    const sideBar = useSideBarStore();
+
+    // 頁面載入時，清除Storage紀錄
+    removeStorage('token');
+    removeStorage('sideBar');
+    removeStorage('nowPath');
+    // 清除原先路由，重新建立項目
+    resetRouter('layout');
+    initRouter('layout');
+
+    // 驗證通過
     const onFinish = async (values: any) => {
-      console.log('Success:', values);
+      const loginResponse = await login(values);
+      // 判斷登入情況
+      if (loginResponse.success) {
+        // 綁定回傳 userInfo 資料
+        userInfo.bindingUserInfo(loginResponse.data);
+        // 儲存 token
+        setStorage('token', loginResponse.data.token);
 
-      const resp = await login(values);
-      console.log(resp);
-    };
-
-    const onFinishFailed = (errorInfo: any) => {
-      console.log('Failed:', errorInfo);
+        // 取得 sideBar 資料
+        const sideBarResponse = await getSideBar();
+        // 判斷請求狀況
+        if (sideBarResponse.success) {
+          sideBar.bindSideBarData(sideBarResponse.data);
+          // 存入 Storage
+          setStorage('sideBar', JSON.stringify(sideBarResponse.data));
+          // 建立動態路由
+          installRouter(sideBarResponse.data);
+        }
+        // 導頁
+        router.push('/');
+      } else {
+        // 顯示錯誤訊息
+        console.log(loginResponse.msg);
+      }
     };
 
     return {
       useCaptcha,
       loginState,
       onFinish,
-      onFinishFailed,
       getLangText,
     };
   },
