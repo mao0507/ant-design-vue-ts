@@ -33,14 +33,18 @@
           <a-menu>
             <a-menu-item key="1">
               <div class="menuItem">
-                <ant-setting-outlined />
-                <span>{{ $t('P00009') }}</span>
+                <span>
+                  <ant-setting-outlined />
+                  {{ $t('P00009') }}
+                </span>
               </div>
             </a-menu-item>
             <a-menu-item key="2">
               <div class="menuItem">
-                <ant-key-outlined />
-                <span>{{ $t('P00010') }}</span>
+                <RouterLink to="/login">
+                  <ant-key-outlined />
+                  {{ $t('P00010') }}
+                </RouterLink>
               </div>
             </a-menu-item>
           </a-menu>
@@ -97,11 +101,20 @@ export default {
 .menuItem
   display: flex
   align-items: center
-  > svg
-    margin-right: 5px
   > span
-    margin: 0px 3px
+    display: flex
+    align-items: center
+    > svg
+      margin-right: 5px
+  > a
+    display: flex
+    align-items: center
+    > svg
+      margin-right: 5px
 
 .trigger:hover
   cursor: pointer
+
+a
+  color: rgba(0, 0, 0, 0.88)
 </style>
