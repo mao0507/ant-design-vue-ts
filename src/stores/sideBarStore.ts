@@ -12,7 +12,7 @@ export const useSideBarStore = defineStore('sidebar', {
     switchDisplay() {
       this.display = !this.display;
     },
-    getSideBarData(data: Array<sideBar>) {
+    bindSideBarData(data: Array<sideBar>) {
       this.sideBar = data;
     },
   },
