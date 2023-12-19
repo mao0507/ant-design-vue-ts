@@ -1,12 +1,5 @@
 <template>
-  <a-layout-sider
-    v-model:collapsed="sideBarDisplay"
-    :width="230"
-    :collapsedWidth="0"
-    :trigger="null"
-    collapsible
-    class="sideBarStyle"
-  >
+  <a-layout-sider breakpoint="lg" collapsed-width="0">
     <div class="logo">
       <div class="imgBox">
         <img src="../assets/img/logo.png" alt="logo" />
@@ -14,7 +7,6 @@
         <component :is="'ant-design-dashboard-outlined'" />
       </div>
     </div>
-
     <sideBarMenu :data="sideBarData" />
   </a-layout-sider>
 </template>
@@ -34,7 +26,6 @@ export default {
   setup() {
     // 宣告對應的 store
     const sideBarStore = useSideBarStore();
-    const sideBarDisplay = computed(() => sideBarStore.display);
 
     // 從 store 取得 sideBar
     const sideBarData = computed(() => sideBarStore.sideBar);
@@ -49,7 +40,6 @@ export default {
     }
 
     return {
-      sideBarDisplay,
       sideBarData,
     };
   },

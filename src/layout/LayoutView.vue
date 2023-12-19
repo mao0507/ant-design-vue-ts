@@ -1,5 +1,5 @@
 <template>
-  <a-layout style="min-height: 100vh">
+  <a-layout style="height: 100vh">
     <!-- SideBar -->
     <SideBarView />
     <a-layout>

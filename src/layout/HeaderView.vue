@@ -2,7 +2,7 @@
   <a-layout-header class="headerNav">
     <!-- sideBar switch Button -->
     <div>
-      <ant-menu-outlined class="trigger" @click="switchDisplay()" />
+      <!-- <ant-menu-outlined class="trigger" @click="switchDisplay()" /> -->
     </div>
 
     <div class="headerButtonList">
